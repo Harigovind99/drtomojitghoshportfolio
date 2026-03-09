@@ -1,0 +1,840 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Tomojit Ghosh | Assistant Professor</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Source+Sans+3:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --bg-page:    #e8f0f5;
+  --bg-card:    #ffffff;
+  --bg-nav:     rgba(232,240,245,0.93);
+  --ink:        #162032;
+  --ink-mid:    #3b5068;
+  --ink-soft:   #5a7187;
+  --ink-faint:  #8aa0b3;
+  --rule:       #cfdce6;
+  --accent:     #1a5f8a;
+  --accent2:    #2a8f7a;
+  --accent-warm:#b84d1a;
+  --accent-lt:  #d6eaf5;
+  --tag-bg:     #deeef7;
+  --tag-txt:    #1a5f8a;
+  --shadow-sm:  0 1px 8px rgba(22,32,50,0.07);
+  --shadow-md:  0 4px 24px rgba(22,32,50,0.11);
+  --radius:     12px;
+  --ease:       0.27s cubic-bezier(.4,0,.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Source Sans 3',sans-serif;
+  background: var(--bg-page);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 15% 10%, rgba(42,143,122,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 60% 50% at 85% 80%, rgba(26,95,138,0.08) 0%, transparent 55%),
+    radial-gradient(ellipse 40% 40% at 60% 30%, rgba(255,255,255,0.45) 0%, transparent 60%);
+  background-attachment:fixed;
+  color:var(--ink);font-size:16px;line-height:1.72;overflow-x:hidden;
+}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--bg-nav);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--rule);transition:box-shadow var(--ease);}
+nav.scrolled{box-shadow:0 2px 18px rgba(22,32,50,0.12);}
+.nav-inner{max-width:1120px;margin:0 auto;padding:0 2rem;height:62px;display:flex;align-items:center;justify-content:space-between;}
+.nav-logo{font-family:'Playfair Display',serif;font-size:1.1rem;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:0.5rem;}
+.nav-logo-dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));flex-shrink:0;}
+.nav-links{display:flex;gap:0.15rem;list-style:none;}
+.nav-links a{display:block;padding:0.42rem 0.85rem;border-radius:7px;font-size:0.855rem;font-weight:500;color:var(--ink-mid);text-decoration:none;transition:background var(--ease),color var(--ease);letter-spacing:0.015em;}
+.nav-links a:hover,.nav-links a.active{background:var(--accent-lt);color:var(--accent);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
+.hamburger span{width:22px;height:2px;background:var(--ink);border-radius:2px;transition:var(--ease);display:block;}
+
+/* SECTIONS */
+section{display:none;min-height:100vh;padding:90px 2rem 80px;animation:fadeUp 0.45s ease both;}
+section.active{display:block;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.container{max-width:1020px;margin:0 auto;}
+.eyebrow{font-family:'JetBrains Mono',monospace;font-size:0.7rem;font-weight:500;color:var(--accent2);letter-spacing:0.16em;text-transform:uppercase;margin-bottom:0.4rem;}
+.page-title{font-family:'Playfair Display',serif;font-size:clamp(2rem,4vw,3rem);color:var(--ink);line-height:1.15;margin-bottom:2.5rem;}
+
+/* HOME */
+.hero{display:grid;grid-template-columns:1fr 240px;gap:3.5rem;align-items:start;padding-top:0.5rem;}
+.hero-name{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.1;color:var(--ink);margin-bottom:0.3rem;}
+.hero-role{font-family:'JetBrains Mono',monospace;font-size:0.75rem;color:var(--accent);letter-spacing:0.1em;margin-bottom:1.6rem;font-weight:500;}
+.hero-bio{font-size:1.02rem;color:var(--ink-mid);line-height:1.8;margin-bottom:0.9rem;max-width:600px;}
+.hero-collab{font-size:0.9rem;color:var(--ink-soft);margin-bottom:1.8rem;}
+.hero-collab a{color:var(--accent);text-decoration:none;}
+.hero-collab a:hover{text-decoration:underline;}
+.btn-row{display:flex;gap:0.85rem;flex-wrap:wrap;}
+.btn{display:inline-flex;align-items:center;gap:0.45rem;padding:0.6rem 1.3rem;border-radius:8px;font-size:0.855rem;font-weight:600;text-decoration:none;transition:var(--ease);letter-spacing:0.02em;}
+.btn-solid{background:var(--accent);color:#fff;box-shadow:0 2px 12px rgba(26,95,138,0.28);}
+.btn-solid:hover{background:#134a6e;box-shadow:0 4px 22px rgba(26,95,138,0.38);transform:translateY(-1px);}
+.btn-teal{background:var(--accent2);color:#fff;box-shadow:0 2px 12px rgba(42,143,122,0.25);}
+.btn-teal:hover{background:#1e7060;transform:translateY(-1px);}
+.btn-ghost{background:transparent;border:1.5px solid var(--accent);color:var(--accent);}
+.btn-ghost:hover{background:var(--accent-lt);transform:translateY(-1px);}
+
+/* Photo */
+.photo-wrap{position:relative;}
+.photo-wrap::after{content:'';position:absolute;inset:-10px -10px 10px 10px;border:2px solid var(--accent2);border-radius:14px;opacity:0.2;z-index:0;}
+.photo-inner{width:100%;aspect-ratio:3/4;border-radius:12px;overflow:hidden;position:relative;z-index:1;background:linear-gradient(145deg,#cfe6f0,#d6eadf);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.3rem;box-shadow:var(--shadow-md);}
+.photo-inner img{width:100%;height:100%;object-fit:cover;display:block;}
+.photo-fallback{display:flex;flex-direction:column;align-items:center;gap:0.3rem;}
+.photo-initials{font-family:'Playfair Display',serif;font-size:3rem;color:var(--accent);opacity:0.55;}
+.photo-sub{font-family:'JetBrains Mono',monospace;font-size:0.62rem;color:var(--accent);opacity:0.4;}
+
+/* Tags */
+.tags{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.75rem;}
+.tag{background:var(--tag-bg);color:var(--tag-txt);padding:0.28rem 0.85rem;border-radius:100px;font-size:0.795rem;font-weight:500;border:1px solid #b8d4e8;transition:var(--ease);cursor:default;}
+.tag:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
+
+/* Cards */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:1.2rem;margin-top:2.5rem;}
+.icard{background:var(--bg-card);border:1px solid var(--rule);border-radius:var(--radius);padding:1.4rem 1.5rem;transition:var(--ease);}
+.icard:hover{box-shadow:var(--shadow-md);transform:translateY(-3px);border-color:#a8cce0;}
+.icard-icon{font-size:1.3rem;margin-bottom:0.6rem;display:block;}
+.icard-label{font-size:0.72rem;font-weight:600;text-transform:uppercase;letter-spacing:0.09em;color:var(--ink-faint);margin-bottom:0.4rem;}
+.icard-body{font-size:0.88rem;color:var(--ink-mid);line-height:1.6;}
+.icard-body a{color:var(--accent);text-decoration:none;}
+.icard-body a:hover{text-decoration:underline;}
+
+/* Timeline */
+.tl{position:relative;padding-left:1.8rem;margin-top:1.2rem;}
+.tl::before{content:'';position:absolute;left:0;top:10px;bottom:10px;width:2px;background:linear-gradient(to bottom,var(--accent),rgba(42,143,122,0.3));border-radius:2px;}
+.tl-item{position:relative;margin-bottom:1.8rem;}
+.tl-item::before{content:'';position:absolute;left:-2.3rem;top:9px;width:10px;height:10px;border-radius:50%;background:var(--accent);border:2.5px solid var(--bg-page);box-shadow:0 0 0 2px var(--accent);}
+.tl-year{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--accent2);font-weight:500;letter-spacing:0.06em;margin-bottom:0.15rem;}
+.tl-head{font-weight:600;font-size:0.97rem;color:var(--ink);margin-bottom:0.1rem;}
+.tl-body{font-size:0.87rem;color:var(--ink-mid);line-height:1.55;}
+.tl-body a{color:var(--accent);text-decoration:none;}
+.tl-body a:hover{text-decoration:underline;}
+.tl-em{font-style:italic;color:var(--ink-soft);font-size:0.84rem;margin-top:0.2rem;display:block;}
+
+/* Sub-headers */
+.sub-head{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--ink);margin:2.8rem 0 1.2rem;padding-bottom:0.5rem;border-bottom:2px solid var(--rule);display:flex;align-items:center;gap:0.7rem;}
+.sub-dot{width:8px;height:8px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));flex-shrink:0;display:inline-block;}
+
+/* Papers */
+.paper-list{list-style:none;}
+.paper-card{background:var(--bg-card);border:1px solid var(--rule);border-radius:var(--radius);padding:1.25rem 1.5rem;margin-bottom:0.9rem;display:grid;grid-template-columns:36px 1fr;gap:0 1rem;align-items:start;position:relative;overflow:hidden;transition:var(--ease);}
+.paper-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(to bottom,var(--accent),var(--accent2));opacity:0;transition:var(--ease);}
+.paper-card:hover{box-shadow:var(--shadow-md);transform:translateX(4px);border-color:#a8cce0;}
+.paper-card:hover::before{opacity:1;}
+.p-num{font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:var(--accent);font-weight:500;padding-top:3px;}
+.p-title{font-style:italic;font-weight:600;color:var(--ink);font-size:0.96rem;margin-bottom:0.28rem;line-height:1.4;}
+.p-title a{color:var(--ink);text-decoration:none;transition:color var(--ease);}
+.p-title a:hover{color:var(--accent);}
+.p-authors{font-size:0.845rem;color:var(--ink-mid);margin-bottom:0.22rem;}
+.p-authors strong{color:var(--accent-warm);font-weight:600;}
+.p-venue{font-size:0.795rem;color:var(--ink-faint);font-weight:500;}
+.p-badge{display:inline-block;font-size:0.65rem;font-family:'JetBrains Mono',monospace;background:#fff4ef;color:var(--accent-warm);border:1px solid #f0c8b0;padding:0.08rem 0.45rem;border-radius:4px;margin-left:0.4rem;vertical-align:middle;}
+.p-link{display:inline-flex;align-items:center;gap:0.3rem;font-size:0.72rem;font-family:'JetBrains Mono',monospace;color:var(--accent);text-decoration:none;margin-top:0.4rem;padding:0.18rem 0.55rem;background:var(--accent-lt);border-radius:4px;border:1px solid #b0cfe4;transition:var(--ease);}
+.p-link:hover{background:var(--accent);color:#fff;border-color:var(--accent);}
+
+/* Review */
+.review-list{list-style:none;margin-top:0.4rem;}
+.review-card{padding:0.75rem 1.1rem;margin-bottom:0.55rem;background:var(--bg-card);border-left:3px solid #9fc5db;border-radius:0 8px 8px 0;font-style:italic;font-size:0.92rem;color:var(--ink-mid);border-top:1px solid var(--rule);border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);transition:var(--ease);}
+.review-card:hover{border-left-color:var(--accent);color:var(--ink);}
+
+/* Teaching */
+.teach-block{background:var(--bg-card);border:1px solid var(--rule);border-radius:var(--radius);padding:1.7rem;margin-bottom:1.4rem;transition:var(--ease);}
+.teach-block:hover{box-shadow:var(--shadow-sm);}
+.teach-head{font-family:'Playfair Display',serif;font-size:1.15rem;color:var(--ink);margin-bottom:1rem;display:flex;align-items:center;gap:0.65rem;flex-wrap:wrap;}
+.tbadge{font-family:'JetBrains Mono',monospace;font-size:0.65rem;padding:0.18rem 0.55rem;border-radius:4px;font-weight:500;letter-spacing:0.04em;}
+.tbadge-inst{background:#e2f5ea;color:#1a7a3e;border:1px solid #aadcbb;}
+.tbadge-ta{background:#fff4e0;color:#9a5800;border:1px solid #ffd070;}
+.course-row{display:flex;align-items:center;gap:1rem;padding:0.58rem 0;border-bottom:1px solid #eef2f5;font-size:0.895rem;}
+.course-row:last-child{border-bottom:none;}
+.c-sem{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--accent);min-width:100px;font-weight:500;}
+.c-code{font-weight:600;color:var(--ink);min-width:110px;font-size:0.84rem;}
+.c-name{color:var(--ink-mid);}
+
+/* CV hero */
+.cv-hero{background:linear-gradient(135deg,var(--accent) 0%,#0e3d5c 100%);border-radius:16px;padding:3rem;color:#fff;text-align:center;margin-bottom:2.2rem;box-shadow:var(--shadow-md);position:relative;overflow:hidden;}
+.cv-hero::before{content:'';position:absolute;right:-60px;top:-60px;width:240px;height:240px;border-radius:50%;background:rgba(255,255,255,0.05);}
+.cv-hero::after{content:'';position:absolute;left:-40px;bottom:-40px;width:180px;height:180px;border-radius:50%;background:rgba(42,143,122,0.15);}
+.cv-hero h2{font-family:'Playfair Display',serif;font-size:1.75rem;margin-bottom:0.5rem;position:relative;z-index:1;}
+.cv-hero p{opacity:0.8;margin-bottom:1.6rem;font-size:0.95rem;position:relative;z-index:1;}
+.cv-btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.8rem 2rem;background:#fff;color:var(--accent);border-radius:8px;font-weight:700;text-decoration:none;font-size:0.95rem;transition:var(--ease);box-shadow:0 4px 20px rgba(0,0,0,0.2);position:relative;z-index:1;}
+.cv-btn:hover{transform:translateY(-2px);box-shadow:0 6px 28px rgba(0,0,0,0.28);}
+
+/* Awards */
+.award-item{display:flex;gap:1rem;align-items:flex-start;padding:1rem 0;border-bottom:1px solid var(--rule);}
+.award-item:last-child{border-bottom:none;}
+.award-icon{font-size:1.35rem;flex-shrink:0;margin-top:2px;}
+.award-name{font-weight:600;color:var(--ink);font-size:0.95rem;margin-bottom:0.1rem;}
+.award-org{font-size:0.87rem;color:var(--ink-soft);}
+.award-amt{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:0.7rem;color:#1a7a3e;background:#e2f5ea;border:1px solid #aadcbb;padding:0.08rem 0.45rem;border-radius:4px;margin-left:0.5rem;vertical-align:middle;}
+
+/* Talks */
+.talk-card{background:var(--bg-card);border:1px solid var(--rule);border-radius:var(--radius);padding:1.2rem 1.5rem;margin-bottom:0.9rem;display:grid;grid-template-columns:90px 1fr;gap:0 1.2rem;transition:var(--ease);}
+.talk-card:hover{box-shadow:var(--shadow-md);border-color:#a8cce0;}
+.talk-date{font-family:'JetBrains Mono',monospace;font-size:0.695rem;color:var(--accent2);font-weight:500;padding-top:3px;line-height:1.45;}
+.talk-title{font-style:italic;font-weight:600;color:var(--ink);font-size:0.95rem;margin-bottom:0.22rem;}
+.talk-venue{font-size:0.83rem;color:var(--ink-soft);}
+.poster-card{padding:0.9rem 1.2rem;margin-bottom:0.6rem;background:var(--bg-card);border:1px solid var(--rule);border-radius:9px;display:grid;grid-template-columns:90px 1fr;gap:0 1rem;transition:var(--ease);}
+.poster-card:hover{box-shadow:var(--shadow-sm);border-color:#a8cce0;}
+
+/* Misc */
+.svc-item{display:flex;align-items:flex-start;gap:0.8rem;padding:0.9rem 1.1rem;margin-bottom:0.55rem;background:var(--bg-card);border:1px solid var(--rule);border-radius:9px;font-size:0.9rem;transition:var(--ease);}
+.svc-item:hover{border-color:#a8cce0;background:var(--accent-lt);}
+.svc-arrow{color:var(--accent2);font-weight:700;flex-shrink:0;margin-top:2px;}
+.svc-title{font-weight:600;color:var(--ink);font-size:0.9rem;}
+.svc-year{font-size:0.82rem;color:var(--ink-soft);}
+
+/* Footer */
+footer{
+  background:var(--ink);
+  padding:2.8rem 2rem 2.2rem;
+  border-top:3px solid var(--accent2);
+}
+.footer-inner{
+  max-width:1020px;
+  margin:0 auto;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:1rem;
+  text-align:center;
+}
+.footer-brand{
+  display:flex;
+  align-items:center;
+  gap:0.65rem;
+}
+.footer-dot{
+  width:9px;height:9px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--accent),var(--accent2));
+  display:inline-block;
+  flex-shrink:0;
+}
+.footer-name{
+  font-family:'Playfair Display',serif;
+  font-size:1.08rem;
+  color:#fff;
+  letter-spacing:0.02em;
+}
+.footer-links{
+  font-size:0.84rem;
+  color:rgba(255,255,255,0.52);
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:0.2rem 0.1rem;
+  line-height:2;
+}
+.footer-links a{
+  color:rgba(255,255,255,0.75);
+  text-decoration:none;
+  transition:color var(--ease);
+}
+.footer-links a:hover{color:var(--accent2);}
+.footer-sep{opacity:0.3;margin:0 0.35rem;}
+.footer-divider{
+  width:48px;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(42,143,122,0.5),transparent);
+}
+.footer-copy{
+  font-size:0.74rem;
+  color:rgba(255,255,255,0.28);
+  font-family:'JetBrains Mono',monospace;
+  letter-spacing:0.04em;
+  line-height:1.7;
+}
+
+/* Responsive */
+@media(max-width:780px){
+  .hero{grid-template-columns:1fr;}
+  .photo-wrap{order:-1;max-width:160px;margin:0 auto;}
+  .nav-links{position:fixed;top:62px;left:0;right:0;background:var(--bg-page);flex-direction:column;padding:1rem 1.5rem 1.5rem;border-bottom:1px solid var(--rule);box-shadow:var(--shadow-md);display:none;gap:0.1rem;}
+  .nav-links.open{display:flex;}
+  .hamburger{display:flex;}
+  .paper-card{grid-template-columns:1fr;}
+  .p-num{display:none;}
+  .talk-card,.poster-card{grid-template-columns:1fr;}
+  .talk-date{margin-bottom:0.2rem;}
+  section{padding:84px 1.2rem 60px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <a class="nav-logo" href="#" onclick="show('home');return false;">
+      <span class="nav-logo-dot"></span>Tomojit Ghosh
+    </a>
+    <button class="hamburger" id="ham" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="navlinks">
+      <li><a href="#" onclick="show('home');return false;"     data-s="home"     class="active">Home</a></li>
+      <li><a href="#" onclick="show('research');return false;" data-s="research">Research</a></li>
+      <li><a href="#" onclick="show('teaching');return false;" data-s="teaching">Teaching</a></li>
+      <li><a href="#" onclick="show('cv');return false;"       data-s="cv">Curriculum Vitae</a></li>
+      <li><a href="#" onclick="show('talks');return false;"    data-s="talks">Presentation/Talks</a></li>
+      <li><a href="#" onclick="show('misc');return false;"     data-s="misc">Miscellaneous</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ══ HOME ══ -->
+<section id="home" class="active">
+<div class="container">
+  <div class="hero">
+    <div>
+      <p class="hero-role">ASSISTANT PROFESSOR · DATA ANALYTICS &amp; MACHINE LEARNING</p>
+      <h1 class="hero-name">Tomojit Ghosh</h1>
+      <p class="hero-bio">
+        I am a tenure-track Assistant Professor of Data Analytics and Machine Learning in the
+        Department of Computer Science and Engineering at the
+        <strong>University of Tennessee at Chattanooga</strong>.
+        I am interested in developing algorithms for visualization, feature selection, and
+        classification using the underlying geometric structure of data. Broadly my research
+        interest lies in the theory and application of machine learning, artificial intelligence,
+        optimization, mathematical modeling, and the application of pattern recognition and
+        machine learning in Omics (transcriptomic, genomics, proteomics, and metabolomics) data.
+        Currently, I'm also exploring generative models, zero-shot learning, etc.
+      </p>
+      <p class="hero-collab">
+        If you are interested in collaborating with me, please email me at
+        <a href="mailto:tomojit-ghosh@utc.edu">tomojit-ghosh@utc.edu</a>.
+        &nbsp;·&nbsp;
+        <a href="https://scholar.google.com/citations?hl=en&user=OfMaGp0AAAAJ" target="_blank" rel="noopener">Google Scholar ↗</a>
+      </p>
+      <div class="btn-row">
+        <a class="btn btn-solid" href="https://scholar.google.com/citations?hl=en&user=OfMaGp0AAAAJ" target="_blank" rel="noopener">📚 Google Scholar</a>
+        <a class="btn btn-teal"  href="https://www.math.colostate.edu/~ghosh/CurriculumVitae_TomojitGhosh.pdf" target="_blank" rel="noopener">⬇ Download CV</a>
+        <a class="btn btn-ghost" href="#" onclick="show('research');return false;">View Research</a>
+      </div>
+    </div>
+    <div class="photo-wrap">
+      <div class="photo-inner">
+        <img src="https://www.math.colostate.edu/~ghosh/images/me5.jpg" alt="Tomojit Ghosh"
+             onerror="this.style.display='none';document.getElementById('pf').style.display='flex';"/>
+        <div class="photo-fallback" id="pf" style="display:none;">
+          <span class="photo-initials">TG</span>
+          <span class="photo-sub">Tomojit Ghosh</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Research Interests -->
+  <div style="margin-top:3rem;">
+    <p class="eyebrow">Areas of Focus</p>
+    <h2 style="font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--ink);margin-bottom:0.9rem;">Research Interests</h2>
+    <div class="tags">
+      <span class="tag">Sparsity-based Machine Learning</span>
+      <span class="tag">Dimensionality Reduction</span>
+      <span class="tag">Visualization</span>
+      <span class="tag">Classification</span>
+      <span class="tag">Optimization</span>
+      <span class="tag">Generative Learning</span>
+      <span class="tag">Unsupervised Learning</span>
+      <span class="tag">Algorithms for Omics Data</span>
+    </div>
+  </div>
+
+  <!-- Info cards -->
+  <div class="card-grid">
+    <div class="icard">
+      <span class="icard-icon">🏛️</span>
+      <div class="icard-label">Current Position</div>
+      <div class="icard-body">Tenure-track Assistant Professor<br/>Dept. of CS &amp; Engineering<br/>University of Tennessee at Chattanooga</div>
+    </div>
+    <div class="icard">
+      <span class="icard-icon">📬</span>
+      <div class="icard-label">Contact</div>
+      <div class="icard-body">
+        <a href="mailto:tomojit-ghosh@utc.edu">tomojit-ghosh@utc.edu</a><br/>
+        Office: EMCS 314A<br/>
+        615 McCallie Ave, Chattanooga, TN 37403
+      </div>
+    </div>
+    <div class="icard">
+      <span class="icard-icon">🎓</span>
+      <div class="icard-label">Highest Degree</div>
+      <div class="icard-body">Ph.D. Computer Science (2022)<br/>Colorado State University<br/>Advisor: Prof. Michael Kirby</div>
+    </div>
+  </div>
+
+  <!-- Education -->
+  <div style="margin-top:3.5rem;">
+    <p class="eyebrow">Academic Background</p>
+    <h2 style="font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--ink);margin-bottom:0.5rem;">Education</h2>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-year">2022 · PH.D. IN COMPUTER SCIENCE</div>
+        <div class="tl-head">Colorado State University, Fort Collins, CO, USA</div>
+        <div class="tl-body">
+          Advisor: Prof. <a href="https://www.math.colostate.edu/~kirby/" target="_blank" rel="noopener">Michael Kirby</a>
+          <span class="tl-em">Dissertation: Convex and Non-Convex Optimization using Centroid-Encoding for Visualization, Classification, and Feature Selection.</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2017 · M.S. IN COMPUTER SCIENCE</div>
+        <div class="tl-head">Colorado State University, Fort Collins, CO, USA</div>
+        <div class="tl-body">
+          Advisor: Prof. <a href="https://www.cs.colostate.edu/~anderson/wp/" target="_blank" rel="noopener">Charles Anderson</a>
+          <span class="tl-em">Master's Thesis: Supervised and Unsupervised Training of Deep Autoencoder</span>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">2006 · B.E. IN INFORMATION TECHNOLOGY</div>
+        <div class="tl-head">Indian Institute of Engineering Science and Technology, Shibpur, WB, India</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Professional Experience -->
+  <div style="margin-top:3rem;">
+    <p class="eyebrow">Career</p>
+    <h2 style="font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--ink);margin-bottom:0.5rem;">Professional Experience</h2>
+    <div class="tl">
+      <div class="tl-item">
+        <div class="tl-year">08/2022 – 06/2023</div>
+        <div class="tl-head">Post Doctoral Fellow</div>
+        <div class="tl-body">Department of Mathematics, Colorado State University, Fort Collins, CO, USA</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">06/2014 – 08/2014</div>
+        <div class="tl-head">Summer Internship</div>
+        <div class="tl-body">Colorado Neurological Institute, Englewood, CO, USA</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">09/2008 – 06/2013</div>
+        <div class="tl-head">Senior Software Developer</div>
+        <div class="tl-body">Cognizant Technology Solutions, Melville, NY, USA</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">06/2006 – 08/2008</div>
+        <div class="tl-head">Junior Software Developer</div>
+        <div class="tl-body">Cognizant Technology Solutions, Kolkata, WB, India</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ══ RESEARCH ══ -->
+<section id="research">
+<div class="container">
+  <p class="eyebrow">Publications &amp; Work</p>
+  <h1 class="page-title">Research</h1>
+
+  <h2 class="sub-head"><span class="sub-dot"></span>Published Articles</h2>
+  <ul class="paper-list">
+    <li class="paper-card">
+      <span class="p-num">01</span>
+      <div>
+        <div class="p-title">Nonlinear Feature Selection using Sparsity-promoted Centroid-Encoder <span class="p-badge">TO BE PUBLISHED</span></div>
+        <div class="p-authors"><strong>Tomojit Ghosh</strong>, and Michael Kirby.</div>
+        <div class="p-venue">Neural Computing and Applications – NCAA (Springer Publishing Group), 2023.</div>
+      </div>
+    </li>
+    <li class="paper-card">
+      <span class="p-num">02</span>
+      <div>
+        <div class="p-title">Using Machine Learning to Determine the Time of Exposure to Infection by a Respiratory Pathogen</div>
+        <div class="p-authors">Kartikay Sharma, Manuchehr Aminian, <strong>Tomojit Ghosh</strong>, Xiaoyu Liu, and Michael Kirby.</div>
+        <div class="p-venue">Scientific Reports (Nature Publishing Group UK London), 2023.</div>
+      </div>
+    </li>
+    <li class="paper-card">
+      <span class="p-num">03</span>
+      <div>
+        <div class="p-title"><a href="http://jmlr.org/papers/v23/20-188.html" target="_blank" rel="noopener">Supervised Dimensionality Reduction and Visualization using Centroid-Encoder</a></div>
+        <div class="p-authors"><strong>Tomojit Ghosh</strong> and Michael Kirby.</div>
+        <div class="p-venue">Journal of Machine Learning Research (JMLR), 2022, Volume 23.</div>
+        <a class="p-link" href="http://jmlr.org/papers/v23/20-188.html" target="_blank" rel="noopener">↗ JMLR</a>
+      </div>
+    </li>
+    <li class="paper-card">
+      <span class="p-num">04</span>
+      <div>
+        <div class="p-title">Early prognosis of respiratory virus shedding in humans</div>
+        <div class="p-authors">Manuchehr Aminian, <strong>Tomojit Ghosh</strong>, Amy Peterson, Angela L Rasmussen, Shannon Stiverson, Kartikay Sharma, and Michael Kirby.</div>
+        <div class="p-venue">Scientific Reports (Nature Publishing Group UK London), 2021.</div>
+      </div>
+    </li>
+    <li class="paper-card">
+      <span class="p-num">05</span>
+      <div>
+        <div class="p-title">New Tools for the Visualization of Biological Pathways</div>
+        <div class="p-authors"><strong>Tomojit Ghosh</strong>, Xiaofeng Ma, Michael Kirby.</div>
+        <div class="p-venue">Methods (Elsevier), pages 26–33, 2018.</div>
+      </div>
+    </li>
+    <li class="paper-card">
+      <span class="p-num">06</span>
+      <div>
+        <div class="p-title">A sequential simplex algorithm for automatic data and center selecting radial basis functions</div>
+        <div class="p-authors">Xiaofeng Ma, <strong>Tomojit Ghosh</strong>, Michael Kirby.</div>
+        <div class="p-venue">International Joint Conference on Neural Networks (IJCNN), pages 549–556, 2017.</div>
+      </div>
+    </li>
+    <li class="paper-card">
+      <span class="p-num">07</span>
+      <div>
+        <div class="p-title">Dantzig-Selector Radial Basis Function Learning with Nonconvex Refinement</div>
+        <div class="p-authors"><strong>Tomojit Ghosh</strong>, Xiaofeng Ma, Michael Kirby.</div>
+        <div class="p-venue">Advances in Time Series Analysis and Forecasting: Selected Contributions from ITISE 2016, Springer International Publishing, pages 313–327, 2017.</div>
+      </div>
+    </li>
+    <li class="paper-card">
+      <span class="p-num">08</span>
+      <div>
+        <div class="p-title">Explorations in Very Early Prognosis of the Human Immune Response to Influenza</div>
+        <div class="p-authors">Mmanu Chaturvedi, <strong>Tomojit Ghosh</strong>, Michael Kirby, Xiaoyu Liu, Xiaofeng Ma, Shannon Stiverson.</div>
+        <div class="p-venue">Proceedings of the 7th ACM International Conference on Bioinformatics, Computational Biology, and Health Informatics, pages 562–570, 2016.</div>
+      </div>
+    </li>
+    <li class="paper-card">
+      <span class="p-num">09</span>
+      <div>
+        <div class="p-title">Sparse skew radial basis functions for time-series prediction</div>
+        <div class="p-authors"><strong>Tomojit Ghosh</strong>, Michael Kirby and Xiaofeng Ma.</div>
+        <div class="p-venue">Proceedings International Work Conference on Time Series Analysis, pages 296–307, 2016.</div>
+      </div>
+    </li>
+  </ul>
+
+  <h2 class="sub-head"><span class="sub-dot"></span>Articles in Review</h2>
+  <ul class="review-list">
+    <li class="review-card">Sparse Linear Centroid-Encoder: A Convex Method for Feature Selection</li>
+    <li class="review-card">Feature Selection using Sparse Adaptive Bottleneck Centroid-Encoder</li>
+    <li class="review-card">Yet Another Algorithm for Supervised Principal Component Analysis: Supervised Linear Centroid-Encoder</li>
+  </ul>
+
+  <h2 class="sub-head"><span class="sub-dot"></span>Preprint Articles</h2>
+  <ul class="paper-list">
+    <li class="paper-card">
+      <span class="p-num">P1</span>
+      <div>
+        <div class="p-title"><a href="https://arxiv.org/abs/2306.04824" target="_blank" rel="noopener">Sparse Linear Centroid-Encoder: A Convex Method for Feature Selection</a></div>
+        <div class="p-authors">Tomojit Ghosh, Michael Kirby, and Karim Karimov.</div>
+        <div class="p-venue">arXiv:2306.04824v2, 2023.</div>
+        <a class="p-link" href="https://arxiv.org/abs/2306.04824" target="_blank" rel="noopener">↗ arXiv</a>
+      </div>
+    </li>
+    <li class="paper-card">
+      <span class="p-num">P2</span>
+      <div>
+        <div class="p-title"><a href="https://arxiv.org/abs/2306.04795" target="_blank" rel="noopener">Feature Selection using Sparse Adaptive Bottleneck Centroid-Encoder</a></div>
+        <div class="p-authors">Tomojit Ghosh, and Michael Kirby.</div>
+        <div class="p-venue">arXiv:2306.04795v2, 2023.</div>
+        <a class="p-link" href="https://arxiv.org/abs/2306.04795" target="_blank" rel="noopener">↗ arXiv</a>
+      </div>
+    </li>
+    <li class="paper-card">
+      <span class="p-num">P3</span>
+      <div>
+        <div class="p-title"><a href="https://arxiv.org/abs/2306.04622" target="_blank" rel="noopener">Yet Another Algorithm for Supervised Principal Component Analysis: Supervised Linear Centroid-Encoder</a></div>
+        <div class="p-authors">Tomojit Ghosh, and Michael Kirby.</div>
+        <div class="p-venue">arXiv:2306.04622v1, 2023.</div>
+        <a class="p-link" href="https://arxiv.org/abs/2306.04622" target="_blank" rel="noopener">↗ arXiv</a>
+      </div>
+    </li>
+    <li class="paper-card">
+      <span class="p-num">P4</span>
+      <div>
+        <div class="p-title"><a href="https://arxiv.org/abs/2201.12910" target="_blank" rel="noopener">Sparse Centroid-Encoder: A Nonlinear Model for Feature Selection</a></div>
+        <div class="p-authors">Tomojit Ghosh, and Michael Kirby.</div>
+        <div class="p-venue">arXiv:2201.12910, 2022.</div>
+        <a class="p-link" href="https://arxiv.org/abs/2201.12910" target="_blank" rel="noopener">↗ arXiv</a>
+      </div>
+    </li>
+    <li class="paper-card">
+      <span class="p-num">P5</span>
+      <div>
+        <div class="p-title"><a href="https://arxiv.org/abs/2002.11934" target="_blank" rel="noopener">Supervised dimensionality reduction and visualization using centroid-encoder</a></div>
+        <div class="p-authors">Tomojit Ghosh, and Michael Kirby.</div>
+        <div class="p-venue">arXiv:2002.11934, 2020.</div>
+        <a class="p-link" href="https://arxiv.org/abs/2002.11934" target="_blank" rel="noopener">↗ arXiv</a>
+      </div>
+    </li>
+  </ul>
+</div>
+</section>
+
+<!-- ══ TEACHING ══ -->
+<section id="teaching">
+<div class="container">
+  <p class="eyebrow">Courses</p>
+  <h1 class="page-title">Teaching Experience</h1>
+  <div class="teach-block">
+    <div class="teach-head">Instructor <span class="tbadge tbadge-inst">INSTRUCTOR OF RECORD</span></div>
+    <div class="course-row">
+      <span class="c-sem">Fall 2023</span>
+      <span class="c-code">CPSC 1110</span>
+      <span class="c-name">Data Structures and Program Design</span>
+    </div>
+  </div>
+  <div class="teach-block">
+    <div class="teach-head">Graduate Teaching Assistant <span class="tbadge tbadge-ta">AT CSU</span></div>
+    <div class="course-row">
+      <span class="c-sem">Fall 2016</span>
+      <span class="c-code">CS 545</span>
+      <span class="c-name">Machine Learning</span>
+    </div>
+    <div class="course-row">
+      <span class="c-sem">Spring 2015</span>
+      <span class="c-code">CS 253</span>
+      <span class="c-name">Programming with C++</span>
+    </div>
+    <div class="course-row">
+      <span class="c-sem">Fall 2014</span>
+      <span class="c-code">CS 155/156/157</span>
+      <span class="c-name">Unix, C and Advanced C</span>
+    </div>
+    <div class="course-row">
+      <span class="c-sem">Spring 2014</span>
+      <span class="c-code">CS 253</span>
+      <span class="c-name">Programming with C++</span>
+    </div>
+    <div class="course-row">
+      <span class="c-sem">Fall 2013</span>
+      <span class="c-code">CS 155/156/157</span>
+      <span class="c-name">Unix, C and Advanced C</span>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ══ CV ══ -->
+<section id="cv">
+<div class="container">
+  <p class="eyebrow">Document</p>
+  <h1 class="page-title">Curriculum Vitae</h1>
+  <div class="cv-hero">
+    <h2>Tomojit Ghosh — Full CV</h2>
+    <p>Complete curriculum vitae including education, publications, awards, and professional experience.</p>
+    <a class="cv-btn" href="https://www.math.colostate.edu/~ghosh/CurriculumVitae_TomojitGhosh.pdf" target="_blank" rel="noopener">⬇&nbsp; Download PDF</a>
+  </div>
+  <div class="card-grid" style="margin-top:0;">
+    <div class="icard">
+      <span class="icard-icon">📄</span>
+      <div class="icard-label">Publications</div>
+      <div class="icard-body">9 published · 3 under review · 5 preprints on arXiv</div>
+    </div>
+    <div class="icard">
+      <span class="icard-icon">🏆</span>
+      <div class="icard-label">Total Awards</div>
+      <div class="icard-body">3 awards totalling $10,000 in fellowships &amp; grants</div>
+    </div>
+    <div class="icard">
+      <span class="icard-icon">🎤</span>
+      <div class="icard-label">Presentations</div>
+      <div class="icard-body">6 invited talks · 4 poster presentations incl. NeurIPS 2022</div>
+    </div>
+  </div>
+  <h2 class="sub-head" style="margin-top:3rem;"><span class="sub-dot"></span>Awards &amp; Honors</h2>
+  <div>
+    <div class="award-item">
+      <span class="award-icon">🥇</span>
+      <div>
+        <div class="award-name">Innovation in Natural Science <span class="award-amt">$1,000</span></div>
+        <div class="award-org">CSU Demo Day STRATA, April 18, 2023.</div>
+      </div>
+    </div>
+    <div class="award-item">
+      <span class="award-icon">🏅</span>
+      <div>
+        <div class="award-name">Evolutionary Computing &amp; Artificial Intelligence Fellowship <span class="award-amt">$8,000</span></div>
+        <div class="award-org">Department of Computer Science, CSU, 2022.</div>
+      </div>
+    </div>
+    <div class="award-item">
+      <span class="award-icon">✈️</span>
+      <div>
+        <div class="award-name">ACM BigLS 2016 Student Travel Award <span class="award-amt">$1,000</span></div>
+        <div class="award-org">ACM BCB, 2016.</div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ══ TALKS ══ -->
+<section id="talks">
+<div class="container">
+  <p class="eyebrow">Conferences &amp; Seminars</p>
+  <h1 class="page-title">Presentations &amp; Talks</h1>
+
+  <h2 class="sub-head"><span class="sub-dot"></span>Presentations and Talks</h2>
+
+  <div class="talk-card">
+    <div class="talk-date">March 2023<br/>(Online)</div>
+    <div>
+      <div class="talk-title">Analyzing Biological Data using Machine Learning</div>
+      <div class="talk-venue">University of Florida, Gainesville, FL.</div>
+    </div>
+  </div>
+  <div class="talk-card">
+    <div class="talk-date">February 2023<br/>Princeton, NJ</div>
+    <div>
+      <div class="talk-title">Analyzing Biological Data using Machine Learning</div>
+      <div class="talk-venue">Pritykin Lab, Lewis-Sigler Institute for Integrative Genomics, Princeton University, Princeton, NJ.</div>
+    </div>
+  </div>
+  <div class="talk-card">
+    <div class="talk-date">August 2021<br/>(Online)</div>
+    <div>
+      <div class="talk-title">Preliminary Analysis of Diagnostic Signatures in Transcriptomic Data for Bovine Respiratory Disease</div>
+      <div class="talk-venue">Zoetis Journal Club Presentation, ZINC.</div>
+    </div>
+  </div>
+  <div class="talk-card">
+    <div class="talk-date">April 2020<br/>(Online)</div>
+    <div>
+      <div class="talk-title">Centroid-encoder: A New Tool for Visualization, Classification and Feature Selection</div>
+      <div class="talk-venue">CSU-Zoetis Journal Club Invitation.</div>
+    </div>
+  </div>
+  <div class="talk-card">
+    <div class="talk-date">October 2019<br/>Fort Collins, CO</div>
+    <div>
+      <div class="talk-title">Centroid-encoder: A New Tool for Visualization, Classification and Feature Selection</div>
+      <div class="talk-venue">Data Science Seminar, CSU, Fort Collins, CO.</div>
+    </div>
+  </div>
+  <div class="talk-card">
+    <div class="talk-date">September 2017<br/>Fort Collins, CO</div>
+    <div>
+      <div class="talk-title">Centroid-encoder Neural Networks for Data Visualization and Classification</div>
+      <div class="talk-venue">The 3rd Annual Meeting of SIAM Central States Section, CSU, Fort Collins, CO.</div>
+    </div>
+  </div>
+
+  <h2 class="sub-head" style="margin-top:2.5rem;"><span class="sub-dot"></span>Poster Presentations</h2>
+
+  <div class="poster-card">
+    <div class="talk-date">June 12–13, 2023<br/>Fort Collins, CO</div>
+    <div>
+      <div class="talk-title" style="font-size:0.92rem;">Sparse Linear Centroid-Encoder: A Convex Method for Feature Selection</div>
+      <div class="talk-venue">Quantitative Cell and Molecular Biology Symposium 2023 (qCMB/UQ-Bio 2023), Fort Collins, CO.</div>
+    </div>
+  </div>
+  <div class="poster-card">
+    <div class="talk-date">April 18, 2023<br/>Fort Collins, CO</div>
+    <div>
+      <div class="talk-title" style="font-size:0.92rem;">Biomarker Selection using Sparse Centroid-Encoder</div>
+      <div class="talk-venue">CSU DemoDay 2023 (STRATA CSU 2023), Fort Collins, CO.</div>
+    </div>
+  </div>
+  <div class="poster-card">
+    <div class="talk-date">Nov 28 – Dec 9, 2022<br/>New Orleans, LA</div>
+    <div>
+      <div class="talk-title" style="font-size:0.92rem;">Supervised Dimensionality Reduction and Visualization using Centroid-Encoder</div>
+      <div class="talk-venue">Neural Information Processing Systems 2022 (NeurIPS 2022), New Orleans, LA.</div>
+    </div>
+  </div>
+  <div class="poster-card">
+    <div class="talk-date">October 2016<br/>Seattle, WA</div>
+    <div>
+      <div class="talk-title" style="font-size:0.92rem;">Biomarker Discovery via Nonlinear Function Approximation</div>
+      <div class="talk-venue">ACM International Workshop on Big Data in Life Sciences (ACM BigLS), ACM BCB, Seattle, WA.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ══ MISC ══ -->
+<section id="misc">
+<div class="container">
+  <p class="eyebrow">Community</p>
+  <h1 class="page-title">Miscellaneous</h1>
+
+  <h2 class="sub-head"><span class="sub-dot"></span>Awards &amp; Honors</h2>
+  <div style="margin-bottom:2rem;">
+    <div class="award-item">
+      <span class="award-icon">🥇</span>
+      <div>
+        <div class="award-name">Innovation in Natural Science <span class="award-amt">$1,000</span></div>
+        <div class="award-org">CSU Demo Day STRATA, April 18, 2023.</div>
+      </div>
+    </div>
+    <div class="award-item">
+      <span class="award-icon">🏅</span>
+      <div>
+        <div class="award-name">Evolutionary Computing &amp; Artificial Intelligence Fellowship <span class="award-amt">$8,000</span></div>
+        <div class="award-org">Department of Computer Science, CSU, 2022.</div>
+      </div>
+    </div>
+    <div class="award-item">
+      <span class="award-icon">✈️</span>
+      <div>
+        <div class="award-name">ACM BigLS 2016 Student Travel Award <span class="award-amt">$1,000</span></div>
+        <div class="award-org">ACM BCB, 2016.</div>
+      </div>
+    </div>
+  </div>
+
+  <h2 class="sub-head"><span class="sub-dot"></span>Services &amp; Outreach</h2>
+  <div class="svc-item">
+    <span class="svc-arrow">→</span>
+    <div>
+      <div class="svc-title">Students' Representative in Graduate Recruitment Committee (GRC) at CSU</div>
+      <div class="svc-year">2016 – 2018</div>
+    </div>
+  </div>
+  <div class="svc-item">
+    <span class="svc-arrow">→</span>
+    <div>
+      <div class="svc-title">Volunteer Judge at Science Fair, Garfield County, CO</div>
+      <div class="svc-year">Summer 2015</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="footer-dot"></span>
+      <span class="footer-name">Tomojit Ghosh</span>
+    </div>
+    <div class="footer-links">
+      <a href="mailto:tomojit-ghosh@utc.edu">tomojit-ghosh@utc.edu</a>
+      <span class="footer-sep">·</span>
+      <a href="https://scholar.google.com/citations?hl=en&user=OfMaGp0AAAAJ" target="_blank" rel="noopener">Google Scholar</a>
+      <span class="footer-sep">·</span>
+      <span>EMCS 314A &nbsp;·&nbsp; 615 McCallie Ave, Chattanooga, TN 37403</span>
+    </div>
+    <div class="footer-divider"></div>
+    <div class="footer-copy">
+      &copy; <span id="fyear"></span> Tomojit Ghosh. All rights reserved.
+      &nbsp;&nbsp;·&nbsp;&nbsp;
+      University of Tennessee at Chattanooga
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('fyear').textContent = new Date().getFullYear();
+function show(id){
+  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
+  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
+  var sec=document.getElementById(id);
+  if(sec){sec.classList.remove('active');void sec.offsetWidth;sec.classList.add('active');}
+  var lnk=document.querySelector('.nav-links a[data-s="'+id+'"]');
+  if(lnk)lnk.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('navlinks').classList.remove('open');
+}
+window.addEventListener('scroll',function(){
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>8);
+});
+document.getElementById('ham').addEventListener('click',function(){
+  document.getElementById('navlinks').classList.toggle('open');
+});
+</script>
+</body>
+</html>
