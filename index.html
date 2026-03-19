@@ -148,7 +148,7 @@ section.active{display:block;}
 .course-row{display:flex;align-items:center;gap:1rem;padding:0.58rem 0;border-bottom:1px solid #eef2f5;font-size:0.895rem;}
 .course-row:last-child{border-bottom:none;}
 .c-sem{font-family:'JetBrains Mono',monospace;font-size:0.72rem;color:var(--accent);min-width:100px;font-weight:500;}
-.c-code{font-weight:600;color:var(--ink);min-width:110px;font-size:0.84rem;}
+.c-code{font-weight:600;color:var(--ink);min-width:120px;font-size:0.84rem;}
 .c-name{color:var(--ink-mid);}
 
 /* CV hero */
@@ -177,6 +177,12 @@ section.active{display:block;}
 .poster-card{padding:0.9rem 1.2rem;margin-bottom:0.6rem;background:var(--bg-card);border:1px solid var(--rule);border-radius:9px;display:grid;grid-template-columns:90px 1fr;gap:0 1rem;transition:var(--ease);}
 .poster-card:hover{box-shadow:var(--shadow-sm);border-color:#a8cce0;}
 
+/* News */
+.news-item{display:flex;gap:1rem;align-items:flex-start;padding:0.85rem 1.1rem;margin-bottom:0.55rem;background:var(--bg-card);border:1px solid var(--rule);border-radius:9px;font-size:0.9rem;transition:var(--ease);}
+.news-item:hover{border-color:#a8cce0;}
+.news-date{font-family:'JetBrains Mono',monospace;font-size:0.68rem;color:var(--accent2);font-weight:500;min-width:90px;padding-top:2px;}
+.news-txt{color:var(--ink-mid);line-height:1.55;}
+
 /* Misc */
 .svc-item{display:flex;align-items:flex-start;gap:0.8rem;padding:0.9rem 1.1rem;margin-bottom:0.55rem;background:var(--bg-card);border:1px solid var(--rule);border-radius:9px;font-size:0.9rem;transition:var(--ease);}
 .svc-item:hover{border-color:#a8cce0;background:var(--accent-lt);}
@@ -185,66 +191,17 @@ section.active{display:block;}
 .svc-year{font-size:0.82rem;color:var(--ink-soft);}
 
 /* Footer */
-footer{
-  background:var(--ink);
-  padding:2.8rem 2rem 2.2rem;
-  border-top:3px solid var(--accent2);
-}
-.footer-inner{
-  max-width:1020px;
-  margin:0 auto;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:1rem;
-  text-align:center;
-}
-.footer-brand{
-  display:flex;
-  align-items:center;
-  gap:0.65rem;
-}
-.footer-dot{
-  width:9px;height:9px;
-  border-radius:50%;
-  background:linear-gradient(135deg,var(--accent),var(--accent2));
-  display:inline-block;
-  flex-shrink:0;
-}
-.footer-name{
-  font-family:'Playfair Display',serif;
-  font-size:1.08rem;
-  color:#fff;
-  letter-spacing:0.02em;
-}
-.footer-links{
-  font-size:0.84rem;
-  color:rgba(255,255,255,0.52);
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  align-items:center;
-  gap:0.2rem 0.1rem;
-  line-height:2;
-}
-.footer-links a{
-  color:rgba(255,255,255,0.75);
-  text-decoration:none;
-  transition:color var(--ease);
-}
+footer{background:var(--ink);padding:2.8rem 2rem 2.2rem;border-top:3px solid var(--accent2);}
+.footer-inner{max-width:1020px;margin:0 auto;display:flex;flex-direction:column;align-items:center;gap:1rem;text-align:center;}
+.footer-brand{display:flex;align-items:center;gap:0.65rem;}
+.footer-dot{width:9px;height:9px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--accent2));display:inline-block;flex-shrink:0;}
+.footer-name{font-family:'Playfair Display',serif;font-size:1.08rem;color:#fff;letter-spacing:0.02em;}
+.footer-links{font-size:0.84rem;color:rgba(255,255,255,0.52);display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:0.2rem 0.1rem;line-height:2;}
+.footer-links a{color:rgba(255,255,255,0.75);text-decoration:none;transition:color var(--ease);}
 .footer-links a:hover{color:var(--accent2);}
 .footer-sep{opacity:0.3;margin:0 0.35rem;}
-.footer-divider{
-  width:48px;height:1px;
-  background:linear-gradient(90deg,transparent,rgba(42,143,122,0.5),transparent);
-}
-.footer-copy{
-  font-size:0.74rem;
-  color:rgba(255,255,255,0.28);
-  font-family:'JetBrains Mono',monospace;
-  letter-spacing:0.04em;
-  line-height:1.7;
-}
+.footer-divider{width:48px;height:1px;background:linear-gradient(90deg,transparent,rgba(42,143,122,0.5),transparent);}
+.footer-copy{font-size:0.74rem;color:rgba(255,255,255,0.28);font-family:'JetBrains Mono',monospace;letter-spacing:0.04em;line-height:1.7;}
 
 /* Responsive */
 @media(max-width:780px){
@@ -288,12 +245,12 @@ footer{
 <div class="container">
   <div class="hero">
     <div>
-      <p class="hero-role">ASSISTANT PROFESSOR · DATA ANALYTICS &amp; MACHINE LEARNING</p>
+      <p class="hero-role">ASSISTANT PROFESSOR · ARTIFICIAL INTELLIGENCE &amp; MACHINE LEARNING</p>
       <h1 class="hero-name">Tomojit Ghosh</h1>
       <p class="hero-bio">
-        I am a tenure-track Assistant Professor of Data Analytics and Machine Learning in the
-        Department of Computer Science and Engineering at the
-        <strong>University of Tennessee at Chattanooga</strong>.
+        I am a tenure-track Assistant Professor of Artificial Intelligence and Machine Learning in the
+        Department of Computer Science &amp; Engineering at the
+        <strong>Wright State University</strong>, Dayton, Ohio.
         I am interested in developing algorithms for visualization, feature selection, and
         classification using the underlying geometric structure of data. Broadly my research
         interest lies in the theory and application of machine learning, artificial intelligence,
@@ -303,7 +260,7 @@ footer{
       </p>
       <p class="hero-collab">
         If you are interested in collaborating with me, please email me at
-        <a href="mailto:tomojit-ghosh@utc.edu">tomojit-ghosh@utc.edu</a>.
+        <a href="mailto:tomojit.ghosh@wright.edu">tomojit.ghosh@wright.edu</a>.
         &nbsp;·&nbsp;
         <a href="https://scholar.google.com/citations?hl=en&user=OfMaGp0AAAAJ" target="_blank" rel="noopener">Google Scholar ↗</a>
       </p>
@@ -331,8 +288,7 @@ footer{
     <h2 style="font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--ink);margin-bottom:0.9rem;">Research Interests</h2>
     <div class="tags">
       <span class="tag">Sparsity-based Machine Learning</span>
-      <span class="tag">Dimensionality Reduction</span>
-      <span class="tag">Visualization</span>
+      <span class="tag">Dimensionality Reduction &amp; Visualization</span>
       <span class="tag">Classification</span>
       <span class="tag">Optimization</span>
       <span class="tag">Generative Learning</span>
@@ -346,15 +302,15 @@ footer{
     <div class="icard">
       <span class="icard-icon">🏛️</span>
       <div class="icard-label">Current Position</div>
-      <div class="icard-body">Tenure-track Assistant Professor<br/>Dept. of CS &amp; Engineering<br/>University of Tennessee at Chattanooga</div>
+      <div class="icard-body">Tenure-track Assistant Professor<br/>Dept. of CS &amp; Engineering<br/>Wright State University, Dayton, OH</div>
     </div>
     <div class="icard">
       <span class="icard-icon">📬</span>
       <div class="icard-label">Contact</div>
       <div class="icard-body">
-        <a href="mailto:tomojit-ghosh@utc.edu">tomojit-ghosh@utc.edu</a><br/>
-        Office: EMCS 314A<br/>
-        615 McCallie Ave, Chattanooga, TN 37403
+        <a href="mailto:tomojit.ghosh@wright.edu">tomojit.ghosh@wright.edu</a><br/>
+        Joshi Research Center, Room 387<br/>
+        3640 Colonel Glenn Hwy, Dayton, OH 45435
       </div>
     </div>
     <div class="icard">
@@ -398,6 +354,16 @@ footer{
     <h2 style="font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--ink);margin-bottom:0.5rem;">Professional Experience</h2>
     <div class="tl">
       <div class="tl-item">
+        <div class="tl-year">08/2024 – Present</div>
+        <div class="tl-head">Assistant Professor (Tenure-track)</div>
+        <div class="tl-body">Department of Computer Science &amp; Engineering, Wright State University, Dayton, OH, USA</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-year">08/2023 – 07/2024</div>
+        <div class="tl-head">Assistant Professor (Tenure-track)</div>
+        <div class="tl-body">Department of Computer Science &amp; Engineering, University of Tennessee, Chattanooga, USA</div>
+      </div>
+      <div class="tl-item">
         <div class="tl-year">08/2022 – 06/2023</div>
         <div class="tl-head">Post Doctoral Fellow</div>
         <div class="tl-body">Department of Mathematics, Colorado State University, Fort Collins, CO, USA</div>
@@ -430,135 +396,126 @@ footer{
 
   <h2 class="sub-head"><span class="sub-dot"></span>Published Articles</h2>
   <ul class="paper-list">
-    <li class="paper-card">
-      <span class="p-num">01</span>
-      <div>
-        <div class="p-title">Nonlinear Feature Selection using Sparsity-promoted Centroid-Encoder <span class="p-badge">TO BE PUBLISHED</span></div>
-        <div class="p-authors"><strong>Tomojit Ghosh</strong>, and Michael Kirby.</div>
-        <div class="p-venue">Neural Computing and Applications – NCAA (Springer Publishing Group), 2023.</div>
-      </div>
-    </li>
-    <li class="paper-card">
-      <span class="p-num">02</span>
-      <div>
-        <div class="p-title">Using Machine Learning to Determine the Time of Exposure to Infection by a Respiratory Pathogen</div>
-        <div class="p-authors">Kartikay Sharma, Manuchehr Aminian, <strong>Tomojit Ghosh</strong>, Xiaoyu Liu, and Michael Kirby.</div>
-        <div class="p-venue">Scientific Reports (Nature Publishing Group UK London), 2023.</div>
-      </div>
-    </li>
-    <li class="paper-card">
-      <span class="p-num">03</span>
-      <div>
-        <div class="p-title"><a href="http://jmlr.org/papers/v23/20-188.html" target="_blank" rel="noopener">Supervised Dimensionality Reduction and Visualization using Centroid-Encoder</a></div>
-        <div class="p-authors"><strong>Tomojit Ghosh</strong> and Michael Kirby.</div>
-        <div class="p-venue">Journal of Machine Learning Research (JMLR), 2022, Volume 23.</div>
-        <a class="p-link" href="http://jmlr.org/papers/v23/20-188.html" target="_blank" rel="noopener">↗ JMLR</a>
-      </div>
-    </li>
-    <li class="paper-card">
-      <span class="p-num">04</span>
-      <div>
-        <div class="p-title">Early prognosis of respiratory virus shedding in humans</div>
-        <div class="p-authors">Manuchehr Aminian, <strong>Tomojit Ghosh</strong>, Amy Peterson, Angela L Rasmussen, Shannon Stiverson, Kartikay Sharma, and Michael Kirby.</div>
-        <div class="p-venue">Scientific Reports (Nature Publishing Group UK London), 2021.</div>
-      </div>
-    </li>
-    <li class="paper-card">
-      <span class="p-num">05</span>
-      <div>
-        <div class="p-title">New Tools for the Visualization of Biological Pathways</div>
-        <div class="p-authors"><strong>Tomojit Ghosh</strong>, Xiaofeng Ma, Michael Kirby.</div>
-        <div class="p-venue">Methods (Elsevier), pages 26–33, 2018.</div>
-      </div>
-    </li>
-    <li class="paper-card">
-      <span class="p-num">06</span>
-      <div>
-        <div class="p-title">A sequential simplex algorithm for automatic data and center selecting radial basis functions</div>
-        <div class="p-authors">Xiaofeng Ma, <strong>Tomojit Ghosh</strong>, Michael Kirby.</div>
-        <div class="p-venue">International Joint Conference on Neural Networks (IJCNN), pages 549–556, 2017.</div>
-      </div>
-    </li>
-    <li class="paper-card">
-      <span class="p-num">07</span>
-      <div>
-        <div class="p-title">Dantzig-Selector Radial Basis Function Learning with Nonconvex Refinement</div>
-        <div class="p-authors"><strong>Tomojit Ghosh</strong>, Xiaofeng Ma, Michael Kirby.</div>
-        <div class="p-venue">Advances in Time Series Analysis and Forecasting: Selected Contributions from ITISE 2016, Springer International Publishing, pages 313–327, 2017.</div>
-      </div>
-    </li>
-    <li class="paper-card">
-      <span class="p-num">08</span>
-      <div>
-        <div class="p-title">Explorations in Very Early Prognosis of the Human Immune Response to Influenza</div>
-        <div class="p-authors">Mmanu Chaturvedi, <strong>Tomojit Ghosh</strong>, Michael Kirby, Xiaoyu Liu, Xiaofeng Ma, Shannon Stiverson.</div>
-        <div class="p-venue">Proceedings of the 7th ACM International Conference on Bioinformatics, Computational Biology, and Health Informatics, pages 562–570, 2016.</div>
-      </div>
-    </li>
-    <li class="paper-card">
-      <span class="p-num">09</span>
-      <div>
-        <div class="p-title">Sparse skew radial basis functions for time-series prediction</div>
-        <div class="p-authors"><strong>Tomojit Ghosh</strong>, Michael Kirby and Xiaofeng Ma.</div>
-        <div class="p-venue">Proceedings International Work Conference on Time Series Analysis, pages 296–307, 2016.</div>
-      </div>
-    </li>
+    <li class="paper-card"><span class="p-num">01</span><div>
+      <div class="p-title">Linear centroid encoder for supervised principal component analysis</div>
+      <div class="p-authors"><strong>Tomojit Ghosh</strong>, and Michael Kirby.</div>
+      <div class="p-venue">Pattern Recognition, vol. 155, 2024.</div>
+    </div></li>
+    <li class="paper-card"><span class="p-num">02</span><div>
+      <div class="p-title">A Multi-domain Multi-task Approach for Feature Selection from Bulk RNA Datasets</div>
+      <div class="p-authors">Karim Salta, <strong>Tomojit Ghosh</strong>, and Michael Kirby.</div>
+      <div class="p-venue">24th International Conference on Computational Science (ICCS), Malaga, Spain, 2024.</div>
+    </div></li>
+    <li class="paper-card"><span class="p-num">03</span><div>
+      <div class="p-title">Enhanced UAV Security: Optimizing Accuracy and Efficiency with MSBCE Feature Selection</div>
+      <div class="p-authors"><strong>Tomojit Ghosh</strong>, and Shahnewaz Karim Sakib.</div>
+      <div class="p-venue">12th International Symposium on Digital Forensics and Security (ISDFS), San Antonio, TX, USA, 2024.</div>
+    </div></li>
+    <li class="paper-card"><span class="p-num">04</span><div>
+      <div class="p-title">Evaluation of Privacy-Utility Tradeoff in Generative Adversarial Network Variants</div>
+      <div class="p-authors">Shahnewaz Karim Sakib, and <strong>Tomojit Ghosh</strong>.</div>
+      <div class="p-venue">12th International Symposium on Digital Forensics and Security (ISDFS), San Antonio, TX, USA, 2024.</div>
+    </div></li>
+    <li class="paper-card"><span class="p-num">05</span><div>
+      <div class="p-title">Feature Selection on Big Data using Masked Sparse Bottleneck Centroid-Encoder</div>
+      <div class="p-authors"><strong>Tomojit Ghosh</strong>, and Michael Kirby.</div>
+      <div class="p-venue">IEEE International Conference on Big Data (Acceptance rate = 17.49%), Sorrento, Italy, 2023.</div>
+    </div></li>
+    <li class="paper-card"><span class="p-num">06</span><div>
+      <div class="p-title">Sparse Linear Centroid-Encoder: A Biomarker Selection tool for High Dimensional Biological Data</div>
+      <div class="p-authors"><strong>Tomojit Ghosh</strong>, Karim Karimov, and Michael Kirby.</div>
+      <div class="p-venue">IEEE International Conference on Bioinformatics and Biomedicine (BIBM) – MABM Workshop, Istanbul, Turkey, 2023.</div>
+    </div></li>
+    <li class="paper-card"><span class="p-num">07</span><div>
+      <div class="p-title">Nonlinear Feature Selection using Sparsity-promoted Centroid-Encoder</div>
+      <div class="p-authors"><strong>Tomojit Ghosh</strong>, and Michael Kirby.</div>
+      <div class="p-venue">Neural Computing and Applications – NCAA (Springer Publishing Group), 2023.</div>
+    </div></li>
+    <li class="paper-card"><span class="p-num">08</span><div>
+      <div class="p-title">Using Machine Learning to Determine the Time of Exposure to Infection by a Respiratory Pathogen</div>
+      <div class="p-authors">Kartikay Sharma, Manuchehr Aminian, <strong>Tomojit Ghosh</strong>, Xiaoyu Liu, and Michael Kirby.</div>
+      <div class="p-venue">Scientific Reports (Nature Publishing Group UK London), 2023.</div>
+    </div></li>
+    <li class="paper-card"><span class="p-num">09</span><div>
+      <div class="p-title"><a href="http://jmlr.org/papers/v23/20-188.html" target="_blank" rel="noopener">Supervised Dimensionality Reduction and Visualization using Centroid-Encoder</a></div>
+      <div class="p-authors"><strong>Tomojit Ghosh</strong> and Michael Kirby.</div>
+      <div class="p-venue">Journal of Machine Learning Research (JMLR), vol. 23, 2022.</div>
+      <a class="p-link" href="http://jmlr.org/papers/v23/20-188.html" target="_blank" rel="noopener">↗ JMLR</a>
+    </div></li>
+    <li class="paper-card"><span class="p-num">10</span><div>
+      <div class="p-title">Early prognosis of respiratory virus shedding in humans</div>
+      <div class="p-authors">Manuchehr Aminian, <strong>Tomojit Ghosh</strong>, Amy Peterson, Angela L Rasmussen, Shannon Stiverson, Kartikay Sharma, and Michael Kirby.</div>
+      <div class="p-venue">Scientific Reports (Nature Publishing Group UK London), 2021.</div>
+    </div></li>
+    <li class="paper-card"><span class="p-num">11</span><div>
+      <div class="p-title">New Tools for the Visualization of Biological Pathways</div>
+      <div class="p-authors"><strong>Tomojit Ghosh</strong>, Xiaofeng Ma, Michael Kirby.</div>
+      <div class="p-venue">Methods (Elsevier), pages 26–33, 2018.</div>
+    </div></li>
+    <li class="paper-card"><span class="p-num">12</span><div>
+      <div class="p-title">A sequential simplex algorithm for automatic data and center selecting radial basis functions</div>
+      <div class="p-authors">Xiaofeng Ma, <strong>Tomojit Ghosh</strong>, Michael Kirby.</div>
+      <div class="p-venue">International Joint Conference on Neural Networks (IJCNN), pages 549–556, 2017.</div>
+    </div></li>
+    <li class="paper-card"><span class="p-num">13</span><div>
+      <div class="p-title">Dantzig-Selector Radial Basis Function Learning with Nonconvex Refinement</div>
+      <div class="p-authors"><strong>Tomojit Ghosh</strong>, Xiaofeng Ma, Michael Kirby.</div>
+      <div class="p-venue">Advances in Time Series Analysis and Forecasting: Selected Contributions from ITISE 2016, Springer International Publishing, pages 313–327, 2017.</div>
+    </div></li>
+    <li class="paper-card"><span class="p-num">14</span><div>
+      <div class="p-title">Explorations in Very Early Prognosis of the Human Immune Response to Influenza</div>
+      <div class="p-authors">Mmanu Chaturvedi, <strong>Tomojit Ghosh</strong>, Michael Kirby, Xiaoyu Liu, Xiaofeng Ma, Shannon Stiverson.</div>
+      <div class="p-venue">Proceedings of the 7th ACM International Conference on Bioinformatics, Computational Biology, and Health Informatics, pages 562–570, 2016.</div>
+    </div></li>
+    <li class="paper-card"><span class="p-num">15</span><div>
+      <div class="p-title">Sparse skew radial basis functions for time-series prediction</div>
+      <div class="p-authors"><strong>Tomojit Ghosh</strong>, Michael Kirby and Xiaofeng Ma.</div>
+      <div class="p-venue">Proceedings International Work Conference on Time Series Analysis, pages 296–307, 2016.</div>
+    </div></li>
   </ul>
 
-  <h2 class="sub-head"><span class="sub-dot"></span>Articles in Review</h2>
+  <h2 class="sub-head"><span class="sub-dot"></span>Articles in Preparation / Review</h2>
   <ul class="review-list">
-    <li class="review-card">Sparse Linear Centroid-Encoder: A Convex Method for Feature Selection</li>
-    <li class="review-card">Feature Selection using Sparse Adaptive Bottleneck Centroid-Encoder</li>
-    <li class="review-card">Yet Another Algorithm for Supervised Principal Component Analysis: Supervised Linear Centroid-Encoder</li>
+    <li class="review-card">Prototype-Encoder: An unsupervised model for automatic prototype selection, visualization with feature sparsity</li>
+    <li class="review-card">Generative Centroid-Encoder: A nonlinear model for effective sample augmentation for biological data</li>
+    <li class="review-card">An Algorithm for Supervised MDS</li>
+    <li class="review-card">Exploring Generative AI: Applications and Implications for High-Dimensional Biological Data</li>
+    <li class="review-card">Review of Feature Selection with an Application to Biological data</li>
+    <li class="review-card">Review of Contrastive Learning</li>
   </ul>
 
   <h2 class="sub-head"><span class="sub-dot"></span>Preprint Articles</h2>
   <ul class="paper-list">
-    <li class="paper-card">
-      <span class="p-num">P1</span>
-      <div>
-        <div class="p-title"><a href="https://arxiv.org/abs/2306.04824" target="_blank" rel="noopener">Sparse Linear Centroid-Encoder: A Convex Method for Feature Selection</a></div>
-        <div class="p-authors">Tomojit Ghosh, Michael Kirby, and Karim Karimov.</div>
-        <div class="p-venue">arXiv:2306.04824v2, 2023.</div>
-        <a class="p-link" href="https://arxiv.org/abs/2306.04824" target="_blank" rel="noopener">↗ arXiv</a>
-      </div>
-    </li>
-    <li class="paper-card">
-      <span class="p-num">P2</span>
-      <div>
-        <div class="p-title"><a href="https://arxiv.org/abs/2306.04795" target="_blank" rel="noopener">Feature Selection using Sparse Adaptive Bottleneck Centroid-Encoder</a></div>
-        <div class="p-authors">Tomojit Ghosh, and Michael Kirby.</div>
-        <div class="p-venue">arXiv:2306.04795v2, 2023.</div>
-        <a class="p-link" href="https://arxiv.org/abs/2306.04795" target="_blank" rel="noopener">↗ arXiv</a>
-      </div>
-    </li>
-    <li class="paper-card">
-      <span class="p-num">P3</span>
-      <div>
-        <div class="p-title"><a href="https://arxiv.org/abs/2306.04622" target="_blank" rel="noopener">Yet Another Algorithm for Supervised Principal Component Analysis: Supervised Linear Centroid-Encoder</a></div>
-        <div class="p-authors">Tomojit Ghosh, and Michael Kirby.</div>
-        <div class="p-venue">arXiv:2306.04622v1, 2023.</div>
-        <a class="p-link" href="https://arxiv.org/abs/2306.04622" target="_blank" rel="noopener">↗ arXiv</a>
-      </div>
-    </li>
-    <li class="paper-card">
-      <span class="p-num">P4</span>
-      <div>
-        <div class="p-title"><a href="https://arxiv.org/abs/2201.12910" target="_blank" rel="noopener">Sparse Centroid-Encoder: A Nonlinear Model for Feature Selection</a></div>
-        <div class="p-authors">Tomojit Ghosh, and Michael Kirby.</div>
-        <div class="p-venue">arXiv:2201.12910, 2022.</div>
-        <a class="p-link" href="https://arxiv.org/abs/2201.12910" target="_blank" rel="noopener">↗ arXiv</a>
-      </div>
-    </li>
-    <li class="paper-card">
-      <span class="p-num">P5</span>
-      <div>
-        <div class="p-title"><a href="https://arxiv.org/abs/2002.11934" target="_blank" rel="noopener">Supervised dimensionality reduction and visualization using centroid-encoder</a></div>
-        <div class="p-authors">Tomojit Ghosh, and Michael Kirby.</div>
-        <div class="p-venue">arXiv:2002.11934, 2020.</div>
-        <a class="p-link" href="https://arxiv.org/abs/2002.11934" target="_blank" rel="noopener">↗ arXiv</a>
-      </div>
-    </li>
+    <li class="paper-card"><span class="p-num">P1</span><div>
+      <div class="p-title"><a href="https://arxiv.org/abs/2306.04824" target="_blank" rel="noopener">Sparse Linear Centroid-Encoder: A Convex Method for Feature Selection</a></div>
+      <div class="p-authors">Tomojit Ghosh, Michael Kirby, and Karim Karimov.</div>
+      <div class="p-venue">arXiv:2306.04824v2, 2023.</div>
+      <a class="p-link" href="https://arxiv.org/abs/2306.04824" target="_blank" rel="noopener">↗ arXiv</a>
+    </div></li>
+    <li class="paper-card"><span class="p-num">P2</span><div>
+      <div class="p-title"><a href="https://arxiv.org/abs/2306.04795" target="_blank" rel="noopener">Feature Selection using Sparse Adaptive Bottleneck Centroid-Encoder</a></div>
+      <div class="p-authors">Tomojit Ghosh, and Michael Kirby.</div>
+      <div class="p-venue">arXiv:2306.04795v2, 2023.</div>
+      <a class="p-link" href="https://arxiv.org/abs/2306.04795" target="_blank" rel="noopener">↗ arXiv</a>
+    </div></li>
+    <li class="paper-card"><span class="p-num">P3</span><div>
+      <div class="p-title"><a href="https://arxiv.org/abs/2306.04622" target="_blank" rel="noopener">Yet Another Algorithm for Supervised Principal Component Analysis: Supervised Linear Centroid-Encoder</a></div>
+      <div class="p-authors">Tomojit Ghosh, and Michael Kirby.</div>
+      <div class="p-venue">arXiv:2306.04622v1, 2023.</div>
+      <a class="p-link" href="https://arxiv.org/abs/2306.04622" target="_blank" rel="noopener">↗ arXiv</a>
+    </div></li>
+    <li class="paper-card"><span class="p-num">P4</span><div>
+      <div class="p-title"><a href="https://arxiv.org/abs/2201.12910" target="_blank" rel="noopener">Sparse Centroid-Encoder: A Nonlinear Model for Feature Selection</a></div>
+      <div class="p-authors">Tomojit Ghosh, and Michael Kirby.</div>
+      <div class="p-venue">arXiv:2201.12910, 2022.</div>
+      <a class="p-link" href="https://arxiv.org/abs/2201.12910" target="_blank" rel="noopener">↗ arXiv</a>
+    </div></li>
+    <li class="paper-card"><span class="p-num">P5</span><div>
+      <div class="p-title"><a href="https://arxiv.org/abs/2002.11934" target="_blank" rel="noopener">Supervised dimensionality reduction and visualization using centroid-encoder</a></div>
+      <div class="p-authors">Tomojit Ghosh, and Michael Kirby.</div>
+      <div class="p-venue">arXiv:2002.11934, 2020.</div>
+      <a class="p-link" href="https://arxiv.org/abs/2002.11934" target="_blank" rel="noopener">↗ arXiv</a>
+    </div></li>
   </ul>
 </div>
 </section>
@@ -568,41 +525,37 @@ footer{
 <div class="container">
   <p class="eyebrow">Courses</p>
   <h1 class="page-title">Teaching Experience</h1>
+
   <div class="teach-block">
-    <div class="teach-head">Instructor <span class="tbadge tbadge-inst">INSTRUCTOR OF RECORD</span></div>
+    <div class="teach-head">Instructor <span class="tbadge tbadge-inst">Wright State University</span></div>
+    <div class="course-row">
+      <span class="c-sem">Fall 2024</span>
+      <span class="c-code">CS4850/6850</span>
+      <span class="c-name">Foundation of AI</span>
+    </div>
+  </div>
+
+  <div class="teach-block">
+    <div class="teach-head">Instructor <span class="tbadge tbadge-inst">Univ. of Tennessee, Chattanooga</span></div>
+    <div class="course-row">
+      <span class="c-sem">Spring 2024</span>
+      <span class="c-code">CPSC 5410</span>
+      <span class="c-name">Model Analysis and Simulation – A Data Science Perspective</span>
+    </div>
     <div class="course-row">
       <span class="c-sem">Fall 2023</span>
       <span class="c-code">CPSC 1110</span>
       <span class="c-name">Data Structures and Program Design</span>
     </div>
   </div>
+
   <div class="teach-block">
     <div class="teach-head">Graduate Teaching Assistant <span class="tbadge tbadge-ta">AT CSU</span></div>
-    <div class="course-row">
-      <span class="c-sem">Fall 2016</span>
-      <span class="c-code">CS 545</span>
-      <span class="c-name">Machine Learning</span>
-    </div>
-    <div class="course-row">
-      <span class="c-sem">Spring 2015</span>
-      <span class="c-code">CS 253</span>
-      <span class="c-name">Programming with C++</span>
-    </div>
-    <div class="course-row">
-      <span class="c-sem">Fall 2014</span>
-      <span class="c-code">CS 155/156/157</span>
-      <span class="c-name">Unix, C and Advanced C</span>
-    </div>
-    <div class="course-row">
-      <span class="c-sem">Spring 2014</span>
-      <span class="c-code">CS 253</span>
-      <span class="c-name">Programming with C++</span>
-    </div>
-    <div class="course-row">
-      <span class="c-sem">Fall 2013</span>
-      <span class="c-code">CS 155/156/157</span>
-      <span class="c-name">Unix, C and Advanced C</span>
-    </div>
+    <div class="course-row"><span class="c-sem">Fall 2016</span><span class="c-code">CS 545</span><span class="c-name">Machine Learning</span></div>
+    <div class="course-row"><span class="c-sem">Spring 2015</span><span class="c-code">CS 253</span><span class="c-name">Programming with C++</span></div>
+    <div class="course-row"><span class="c-sem">Fall 2014</span><span class="c-code">CS 155/156/157</span><span class="c-name">Unix, C and Advanced C</span></div>
+    <div class="course-row"><span class="c-sem">Spring 2014</span><span class="c-code">CS 253</span><span class="c-name">Programming with C++</span></div>
+    <div class="course-row"><span class="c-sem">Fall 2013</span><span class="c-code">CS 155/156/157</span><span class="c-name">Unix, C and Advanced C</span></div>
   </div>
 </div>
 </section>
@@ -621,21 +574,36 @@ footer{
     <div class="icard">
       <span class="icard-icon">📄</span>
       <div class="icard-label">Publications</div>
-      <div class="icard-body">9 published · 3 under review · 5 preprints on arXiv</div>
+      <div class="icard-body">15 published · 6 in preparation/review · 5 preprints on arXiv</div>
     </div>
     <div class="icard">
       <span class="icard-icon">🏆</span>
       <div class="icard-label">Total Awards</div>
-      <div class="icard-body">3 awards totalling $10,000 in fellowships &amp; grants</div>
+      <div class="icard-body">5 awards incl. 2 teaching awards &amp; $10,000 in fellowships &amp; grants</div>
     </div>
     <div class="icard">
       <span class="icard-icon">🎤</span>
       <div class="icard-label">Presentations</div>
-      <div class="icard-body">6 invited talks · 4 poster presentations incl. NeurIPS 2022</div>
+      <div class="icard-body">9 talks · 4 poster presentations incl. NeurIPS 2022</div>
     </div>
   </div>
+
   <h2 class="sub-head" style="margin-top:3rem;"><span class="sub-dot"></span>Awards &amp; Honors</h2>
   <div>
+    <div class="award-item">
+      <span class="award-icon">🏅</span>
+      <div>
+        <div class="award-name">Outstanding Tenured/Tenure-track Faculty Teaching Award</div>
+        <div class="award-org">College of Engineering &amp; Computer Science, UTC, April 22, 2024.</div>
+      </div>
+    </div>
+    <div class="award-item">
+      <span class="award-icon">🏅</span>
+      <div>
+        <div class="award-name">Outstanding Faculty Teaching Award</div>
+        <div class="award-org">Department of Computer Science &amp; Engineering, UTC, April 22, 2024.</div>
+      </div>
+    </div>
     <div class="award-item">
       <span class="award-icon">🥇</span>
       <div>
@@ -668,7 +636,27 @@ footer{
   <h1 class="page-title">Presentations &amp; Talks</h1>
 
   <h2 class="sub-head"><span class="sub-dot"></span>Presentations and Talks</h2>
-
+  <div class="talk-card">
+    <div class="talk-date">March 2024<br/>Atlanta, GA</div>
+    <div>
+      <div class="talk-title">Feature Selection on Big Data using Masked Sparse Bottleneck Centroid-Encoder</div>
+      <div class="talk-venue">MCBIOS 2024 at Emory University, March 22–24, Atlanta, GA.</div>
+    </div>
+  </div>
+  <div class="talk-card">
+    <div class="talk-date">March 2024<br/>Atlanta, GA</div>
+    <div>
+      <div class="talk-title">Sparse Linear Centroid-Encoder: A Biomarker Selection tool for High Dimensional Biological Data</div>
+      <div class="talk-venue">MCBIOS 2024 at Emory University, March 22–24, Atlanta, GA.</div>
+    </div>
+  </div>
+  <div class="talk-card">
+    <div class="talk-date">November 2023<br/>Knoxville, TN</div>
+    <div>
+      <div class="talk-title">Some Convex and Nonconvex Models to Analyze Biological Data Sets</div>
+      <div class="talk-venue">Data Science Seminar, Department of Mathematics, University of Tennessee, Knoxville, TN.</div>
+    </div>
+  </div>
   <div class="talk-card">
     <div class="talk-date">March 2023<br/>(Online)</div>
     <div>
@@ -713,7 +701,6 @@ footer{
   </div>
 
   <h2 class="sub-head" style="margin-top:2.5rem;"><span class="sub-dot"></span>Poster Presentations</h2>
-
   <div class="poster-card">
     <div class="talk-date">June 12–13, 2023<br/>Fort Collins, CO</div>
     <div>
@@ -754,6 +741,20 @@ footer{
   <h2 class="sub-head"><span class="sub-dot"></span>Awards &amp; Honors</h2>
   <div style="margin-bottom:2rem;">
     <div class="award-item">
+      <span class="award-icon">🏅</span>
+      <div>
+        <div class="award-name">Outstanding Tenured/Tenure-track Faculty Teaching Award</div>
+        <div class="award-org">College of Engineering &amp; Computer Science, UTC, April 22, 2024.</div>
+      </div>
+    </div>
+    <div class="award-item">
+      <span class="award-icon">🏅</span>
+      <div>
+        <div class="award-name">Outstanding Faculty Teaching Award</div>
+        <div class="award-org">Department of Computer Science &amp; Engineering, UTC, April 22, 2024.</div>
+      </div>
+    </div>
+    <div class="award-item">
       <span class="award-icon">🥇</span>
       <div>
         <div class="award-name">Innovation in Natural Science <span class="award-amt">$1,000</span></div>
@@ -780,6 +781,20 @@ footer{
   <div class="svc-item">
     <span class="svc-arrow">→</span>
     <div>
+      <div class="svc-title">Served on the NSF Panel as a reviewer</div>
+      <div class="svc-year">Summer 2024</div>
+    </div>
+  </div>
+  <div class="svc-item">
+    <span class="svc-arrow">→</span>
+    <div>
+      <div class="svc-title">Organised the technical session "Application of AI in Infectious Diseases/Biological Data Sets" at MCBIOS 2024 Conference at Emory University</div>
+      <div class="svc-year">March 22–24, 2024</div>
+    </div>
+  </div>
+  <div class="svc-item">
+    <span class="svc-arrow">→</span>
+    <div>
       <div class="svc-title">Students' Representative in Graduate Recruitment Committee (GRC) at CSU</div>
       <div class="svc-year">2016 – 2018</div>
     </div>
@@ -790,6 +805,28 @@ footer{
       <div class="svc-title">Volunteer Judge at Science Fair, Garfield County, CO</div>
       <div class="svc-year">Summer 2015</div>
     </div>
+  </div>
+
+  <h2 class="sub-head"><span class="sub-dot"></span>News Feed</h2>
+  <div class="news-item">
+    <span class="news-date">06/28/2024</span>
+    <span class="news-txt">Our paper "A Multi-domain Multi-task Approach for Feature Selection from Bulk RNA Datasets" is accepted and available online.</span>
+  </div>
+  <div class="news-item">
+    <span class="news-date">06/14/2024</span>
+    <span class="news-txt">The article "Linear centroid encoder for supervised principal component analysis", published in Pattern Recognition, is now available online.</span>
+  </div>
+  <div class="news-item">
+    <span class="news-date">05/22/2024</span>
+    <span class="news-txt">Served as a reviewer in a NSF Panel.</span>
+  </div>
+  <div class="news-item">
+    <span class="news-date">04/26/2024</span>
+    <span class="news-txt">Accepted a new position as an Assistant Professor at Wright State University, starting from August 1st, 2024.</span>
+  </div>
+  <div class="news-item">
+    <span class="news-date">03/24/2024</span>
+    <span class="news-txt">Hosted the technical session "Application of AI in Infectious Diseases/Biological Data Sets" at MCBIOS at Emory University, Atlanta, GA.</span>
   </div>
 </div>
 </section>
@@ -802,17 +839,17 @@ footer{
       <span class="footer-name">Tomojit Ghosh</span>
     </div>
     <div class="footer-links">
-      <a href="mailto:tomojit-ghosh@utc.edu">tomojit-ghosh@utc.edu</a>
+      <a href="mailto:tomojit.ghosh@wright.edu">tomojit.ghosh@wright.edu</a>
       <span class="footer-sep">·</span>
       <a href="https://scholar.google.com/citations?hl=en&user=OfMaGp0AAAAJ" target="_blank" rel="noopener">Google Scholar</a>
       <span class="footer-sep">·</span>
-      <span>EMCS 314A &nbsp;·&nbsp; 615 McCallie Ave, Chattanooga, TN 37403</span>
+      <span>Joshi Research Center, Room 387 &nbsp;·&nbsp; 3640 Colonel Glenn Hwy, Dayton, OH 45435</span>
     </div>
     <div class="footer-divider"></div>
     <div class="footer-copy">
       &copy; <span id="fyear"></span> Tomojit Ghosh. All rights reserved.
       &nbsp;&nbsp;·&nbsp;&nbsp;
-      University of Tennessee at Chattanooga
+      Wright State University
     </div>
   </div>
 </footer>
