@@ -223,19 +223,19 @@ footer{background:var(--ink);padding:2.8rem 2rem 2.2rem;border-top:3px solid var
 <!-- NAV -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a class="nav-logo" href="#" onclick="show('home');return false;">
+    <a class="nav-logo" href="#" data-s="home">
       <span class="nav-logo-dot"></span>Tomojit Ghosh
     </a>
     <button class="hamburger" id="ham" aria-label="Toggle menu">
       <span></span><span></span><span></span>
     </button>
     <ul class="nav-links" id="navlinks">
-      <li><a href="#" onclick="show('home');return false;"     data-s="home"     class="active">Home</a></li>
-      <li><a href="#" onclick="show('research');return false;" data-s="research">Research</a></li>
-      <li><a href="#" onclick="show('teaching');return false;" data-s="teaching">Teaching</a></li>
-      <li><a href="#" onclick="show('cv');return false;"       data-s="cv">Curriculum Vitae</a></li>
-      <li><a href="#" onclick="show('talks');return false;"    data-s="talks">Presentation/Talks</a></li>
-      <li><a href="#" onclick="show('misc');return false;"     data-s="misc">Miscellaneous</a></li>
+      <li><a href="#" data-s="home"     class="active">Home</a></li>
+      <li><a href="#" data-s="research">Research</a></li>
+      <li><a href="#" data-s="teaching">Teaching</a></li>
+      <li><a href="#" data-s="cv">Curriculum Vitae</a></li>
+      <li><a href="#" data-s="talks">Presentation/Talks</a></li>
+      <li><a href="#" data-s="misc">Miscellaneous</a></li>
     </ul>
   </div>
 </nav>
@@ -265,7 +265,7 @@ footer{background:var(--ink);padding:2.8rem 2rem 2.2rem;border-top:3px solid var
       <div class="btn-row">
         <a class="btn btn-solid" href="https://scholar.google.com/citations?user=6AHKhcUAAAAJ&hl=en" target="_blank" rel="noopener">📚 Google Scholar</a>
         <a class="btn btn-teal"  href="https://www.math.colostate.edu/~ghosh/CurriculumVitae_TomojitGhosh.pdf" target="_blank" rel="noopener">⬇ Download CV</a>
-        <a class="btn btn-ghost" href="#" onclick="show('research');return false;">View Research</a>
+        <a class="btn btn-ghost" href="#" data-s="research">View Research</a>
       </div>
     </div>
     <div class="photo-wrap">
@@ -854,20 +854,31 @@ footer{background:var(--ink);padding:2.8rem 2rem 2.2rem;border-top:3px solid var
 
 <script>
 document.getElementById('fyear').textContent = new Date().getFullYear();
+
 function show(id){
-  document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
-  document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
-  var sec=document.getElementById(id);
-  if(sec){sec.classList.remove('active');void sec.offsetWidth;sec.classList.add('active');}
-  var lnk=document.querySelector('.nav-links a[data-s="'+id+'"]');
-  if(lnk)lnk.classList.add('active');
-  window.scrollTo({top:0,behavior:'smooth'});
+  document.querySelectorAll('section').forEach(function(s){ s.classList.remove('active'); });
+  document.querySelectorAll('.nav-links a').forEach(function(a){ a.classList.remove('active'); });
+  var sec = document.getElementById(id);
+  if(sec){ sec.classList.remove('active'); void sec.offsetWidth; sec.classList.add('active'); }
+  var lnk = document.querySelector('.nav-links a[data-s="'+id+'"]');
+  if(lnk) lnk.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
   document.getElementById('navlinks').classList.remove('open');
 }
-window.addEventListener('scroll',function(){
-  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>8);
+
+document.addEventListener('click', function(e){
+  var el = e.target.closest('[data-s]');
+  if(el){
+    e.preventDefault();
+    show(el.getAttribute('data-s'));
+  }
 });
-document.getElementById('ham').addEventListener('click',function(){
+
+window.addEventListener('scroll', function(){
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 8);
+});
+
+document.getElementById('ham').addEventListener('click', function(){
   document.getElementById('navlinks').classList.toggle('open');
 });
 </script>
