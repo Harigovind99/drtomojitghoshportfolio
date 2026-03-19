@@ -260,7 +260,7 @@ footer{background:var(--ink);padding:2.8rem 2rem 2.2rem;border-top:3px solid var
       </p>
       <p class="hero-collab">
         If you are interested in collaborating with me, please email me at
-        <a href="mailto:tomojit.ghosh@wright.edu">tomojit.ghosh@wright.edu</a>.
+        <a href="/cdn-cgi/l/email-protection#aadec5c7c5c0c3de84cdc2c5d9c2eaddd8c3cdc2de84cfcedf"><span class="__cf_email__" data-cfemail="8cf8e3e1e3e6e5f8a2ebe4e3ffe4ccfbfee5ebe4f8a2e9e8f9">[email&#160;protected]</span></a>.
       </p>
       <div class="btn-row">
         <a class="btn btn-solid" href="https://scholar.google.com/citations?user=6AHKhcUAAAAJ&hl=en" target="_blank" rel="noopener">📚 Google Scholar</a>
@@ -837,7 +837,7 @@ footer{background:var(--ink);padding:2.8rem 2rem 2.2rem;border-top:3px solid var
       <span class="footer-name">Tomojit Ghosh</span>
     </div>
     <div class="footer-links">
-      <a href="/cdn-cgi/l/email-protection#53273c3e3c393a277d343b3c203b1324213a343b277d363726"><span class="__cf_email__" data-cfemail="4c38232123262538622b24233f240c3b3e252b243862292839">[email&#160;protected]</span></a>
+      <a href="/cdn-cgi/l/email-protection#d5a1bab8babfbca1fbb2bdbaa6bd95a2a7bcb2bda1fbb0b1a0"><span class="__cf_email__" data-cfemail="64100b090b0e0d104a030c0b170c2413160d030c104a010011">[email&#160;protected]</span></a>
       <span class="footer-sep">·</span>
       <a href="https://scholar.google.com/citations?user=6AHKhcUAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>
       <span class="footer-sep">·</span>
@@ -852,10 +852,24 @@ footer{background:var(--ink);padding:2.8rem 2rem 2.2rem;border-top:3px solid var
   </div>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 document.getElementById('fyear').textContent = new Date().getFullYear();
 function show(id){
   document.querySelectorAll('section').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('active'));
   var sec=document.getElementById(id);
-  if(sec){sec.classList.remove('active');void sec.offsetWidt
+  if(sec){sec.classList.remove('active');void sec.offsetWidth;sec.classList.add('active');}
+  var lnk=document.querySelector('.nav-links a[data-s="'+id+'"]');
+  if(lnk)lnk.classList.add('active');
+  window.scrollTo({top:0,behavior:'smooth'});
+  document.getElementById('navlinks').classList.remove('open');
+}
+window.addEventListener('scroll',function(){
+  document.getElementById('navbar').classList.toggle('scrolled',window.scrollY>8);
+});
+document.getElementById('ham').addEventListener('click',function(){
+  document.getElementById('navlinks').classList.toggle('open');
+});
+</script>
+</body>
+</html>
